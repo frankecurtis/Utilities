@@ -1,0 +1,120 @@
+%
+\RequirePackage{fix-cm}
+%
+%\documentclass{svjour3}                     % onecolumn (standard format)
+%\documentclass[smallcondensed]{svjour3}     % onecolumn (ditto)
+\documentclass[smallextended]{svjour3}       % onecolumn (second format)
+%\documentclass[twocolumn]{svjour3}          % twocolumn
+%
+\smartqed  % flush right qed marks, e.g. at end of proof
+%
+%**********
+% Requires
+%**********
+\RequirePackage{amsmath}
+\RequirePackage{amsfonts}
+\RequirePackage{amssymb}
+\RequirePackage{hyperref}
+\RequirePackage{multirow}
+\RequirePackage{algorithm}
+\RequirePackage{algpseudocode}
+\RequirePackage{graphicx}
+\RequirePackage{xcolor}
+%\RequirePackage{amsthm}
+\allowdisplaybreaks
+
+%*************
+% Use packages
+%*************
+\usepackage{dpr_fec,ifthen}
+
+%*************
+% New theorems
+%*************
+\newtheorem{assumption}{Assumption}[section]
+%\newtheorem{definition}{Definition}[section]
+
+% Begin document
+\begin{document}
+
+\title{\input{title}\thanks{This material is based upon work supported by the U.S.~Department of Energy, Office of Science, Applied Mathematics, Early Career Research Program under Award Number DE--SC0010615 and by the U.S.~National Science Foundation, Division of Mathematical Sciences, Computational Mathematics Program under Award Number DMS--1016291.}
+}
+\subtitle{Do you have a subtitle?\\ If so, write it here}
+%\titlerunning{Short form of title}        % if too long for running head
+
+% Authors
+\author{Frank E. Curtis \and
+        Daniel P.~Robinson}
+%\authorrunning{Short form of author list} % if too long for running head
+
+
+% Institution information
+\institute{Frank E. Curtis \at
+           Department of Industrial and Systems Engineering,
+           Lehigh University, Bethlehem, PA, USA;\\
+           Tel.: +1-646-789-5490\\
+           %Fax: +123-45-678910\\
+           \email{frank.e.curtis@lehigh.edu} %  \\
+           %\emph{Present address:} of F. Author  %  if needed
+           \and
+           Daniel P. Robinson \at
+           Department of Industrial and Systems Engineering,
+           Lehigh University, Bethlehem, PA, USA;\\
+           Tel.: +1-610-758-4039\\
+           %Fax: +123-45-678910\\
+           \email{daniel.p.robinson@lehigh.edu} %  \\
+           %\emph{Present address:} of S. Author  %  if needed
+}
+
+%Date
+\date{Received: date / Accepted: date}
+% The correct dates will be entered by the editor
+
+
+%Title
+\maketitle
+
+%**********
+% Abstract
+%**********
+\begin{abstract}
+\input{abstract}
+\keywords{nonlinear optimization, nonconvex optimization, worst-case iteration complexity, worst-case evaluation complexity, regularization methods, trust region methods\dots change as necessary}
+% \PACS{PACS code1 \and PACS code2 \and more}
+\subclass{MSC code1 \and MSC code2 \and more}
+\end{abstract}
+
+%**************
+% Body of paper
+%**************
+\numberwithin{equation}{section}
+\numberwithin{theorem}{section}
+\input{body}
+
+%\begin{acknowledgements}
+%If you'd like to thank anyone, place your comments here and remove the percent signs.
+%\end{acknowledgements}
+
+% Authors must disclose all relationships or interests that 
+% could have direct or potential influence or impart bias on 
+% the work: 
+%
+% \section*{Conflict of interest}
+%
+% The authors declare that they have no conflict of interest.
+
+% BibTeX users please use one of
+%\bibliographystyle{spbasic}      % basic style, author-year citations
+%\bibliographystyle{spmpsci}      % mathematics and physical sciences
+%\bibliographystyle{spphys}       % APS-like style for physics
+%\bibliography{}   % name your BibTeX data base
+
+%**************
+% Bibliography
+%**************
+\bibliographystyle{spmpsci}
+\bibliography{references}
+
+\end{document}
+% end of file template.tex
+

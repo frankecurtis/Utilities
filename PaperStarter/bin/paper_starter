@@ -33,14 +33,15 @@ read papername
 
 printf "\n"
 printf "What journal format are you using? \n"
-printf "0) SIOPT \n"
-printf "1) MP \n"
-printf "2) IMAJNA \n"
-printf "3) OPTLETTERS \n\n"
-printf "Please enter a number 0-3, then hit Enter: "
+printf "0) SIOPT (SIAM Journal on Optimization) \n"
+printf "1) MP (Mathematical Programming) \n"
+printf "2) IMAJNA (IMA Journal on Numerical Analysis) \n"
+printf "3) OPTLETTERS (Optimization Letters) \n"
+printf "4) COAP (Computational Optimization and Applications) \n\n"
+printf "Please enter a number 0-4, then hit Enter: "
 read journal
 case $journal in
-   [0-3] )
+   [0-4] )
    printf "\n"
    ;;
    * )
@@ -86,6 +87,13 @@ case $journal in
    printf "Copying OPTLETTERS-specific files .....\n"
    cp ${PAPERSTARTER}/journal_files/OPTLETTERS/* .
    cp ${PAPERSTARTER}/src/paper_optletters.tex ./${papername}_paper.tex
+   ;;
+   # COAP
+   #==============
+   4 )
+   printf "Copying COAP-specific files .....\n"
+   cp ${PAPERSTARTER}/journal_files/COAP/* .
+   cp ${PAPERSTARTER}/src/paper_coap.tex ./${papername}_paper.tex
    ;;
    # Unrecognized
    #==============
