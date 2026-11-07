@@ -1,0 +1,89 @@
+%****************
+% Document class
+%****************
+\documentclass[]{interact}
+
+%**********
+% Requires
+%**********
+\usepackage[numbers,sort&compress]{natbib}
+\bibpunct[, ]{[}{]}{,}{n}{,}{,}
+\renewcommand\bibfont{\fontsize{10}{12}\selectfont}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{assumption}[theorem]{Assumption}
+
+\usepackage{epstopdf}
+\usepackage[caption=false]{subfig}
+\usepackage{hyperref}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{dpr_fec}
+\allowdisplaybreaks
+
+%**********
+% Document
+%**********
+\begin{document}
+
+%**********
+% Headings
+%**********
+\author{Frank E. Curtis
+   \and Daniel P.~Robinson}
+\date  {\today}
+
+\articletype{ARTICLE TEMPLATE}
+
+\title{\input{title}}
+
+\author{
+\name{Frank E.~Curtis\textsuperscript{a}\thanks{Email: frank.e.curtis@lehigh.edu} and Daniel P.~Robinson\textsuperscript{a}\thanks{Email: daniel.p.robinson@lehigh.edu}}
+\affil{\textsuperscript{a}Department of Industrial and Systems Engineering, Lehigh University, Bethlehem, PA, USA}
+}
+
+% Title
+\maketitle
+
+%**********
+% Abstract
+%**********
+\begin{abstract}
+  \input{abstract}
+\end{abstract}
+
+%**********
+% Keywords
+%**********
+\begin{keywords}
+  nonlinear optimization; constrained optimization; stochastic methods; retrospective approximation; interior-point methods
+\end{keywords}
+
+%*****
+% AMS
+%*****
+\begin{amscode}
+  49M37, 65K05, 65K10, 65Y20, 68Q25, 90C30, 90C60
+\end{amscode}
+
+%**************
+% Body of paper
+%**************
+\input{body}
+
+%**************
+% Bibliography
+%**************
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

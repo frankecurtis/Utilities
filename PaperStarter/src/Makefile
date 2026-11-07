@@ -21,4 +21,4 @@ name_techreport.pdf: name_techreport.tex abstract.tex body.tex title.tex referen
 	-rm -f *.aux *.blg *.log *.out *.gz *.thm
 
 clean:
-	-rm -f *.aux *.blg *.log *.out *.gz *.thm *.pdf *.bbl
+	-rm -f *.aux *.blg *.log *.out *.gz *.thm name_paper.pdf name_techreport.pdf *.bbl

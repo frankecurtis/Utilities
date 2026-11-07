@@ -20,7 +20,7 @@
 \RequirePackage{algpseudocode}
 \RequirePackage{graphicx}
 \RequirePackage{xcolor}
-%\RequirePackage{amsthm}
+\RequirePackage{amsthm}
 \RequirePackage{amsmath}
 \RequirePackage{amsfonts}
 \RequirePackage{amssymb}
@@ -40,16 +40,18 @@
 %*************
 % New theorems
 %*************
+\newtheorem{theorem}{Theorem}[section]
 \newtheorem{assumption}{Assumption}[section]
+\newtheorem{lemma}{Lemma}[section]
 
 %*******
 % COR@L
 %*******
 \usepackage{isetechreport}
-\def\reportyear{17T}
-\def\reportno{012}
-\def\revisionno{2}
-\def\originaldate{February 3, 2018}
+\def\reportyear{26T}
+\def\reportno{0??}
+\def\revisionno{0}
+\def\originaldate{\today}
 \def\revisiondate{\today}
 \coraltrue
 \cvcrfalse

@@ -33,15 +33,17 @@ read papername
 
 printf "\n"
 printf "What journal format are you using? \n"
-printf "0) SIOPT (SIAM Journal on Optimization) \n"
-printf "1) MP (Mathematical Programming) \n"
-printf "2) IMAJNA (IMA Journal on Numerical Analysis) \n"
-printf "3) OPTLETTERS (Optimization Letters) \n"
-printf "4) COAP (Computational Optimization and Applications) \n\n"
-printf "Please enter a number 0-4, then hit Enter: "
+printf "0) COAP (Computational Optimization and Applications) \n"
+printf "1) IMAJNA (IMA Journal of Numerical Analysis) \n"
+printf "2) JOTA (Journal of Optimization Theory and Applications) \n"
+printf "3) MP (Mathematical Programming) \n"
+printf "4) OMS (Optimization Methods and Software) \n"
+printf "5) OPTL (Optimization Letters) \n"
+printf "6) SIOPT (SIAM Journal on Optimization) \n\n"
+printf "Please enter a number 0-6, then hit Enter: "
 read journal
 case $journal in
-   [0-4] )
+   [0-6] )
    printf "\n"
    ;;
    * )
@@ -60,44 +62,58 @@ rm -f *_paper.pdf *_techreport.pdf
 rm -f *_paper.bbl *_techreport.bbl
 
 case $journal in
-   # SIOPT
-   #==============
-   0 )
-   printf "Copying SIOPT-specific files .....\n"
-   cp ${PAPERSTARTER}/journal_files/SIOPT/* .
-   cp ${PAPERSTARTER}/src/paper_siopt.tex ./${papername}_paper.tex
-   ;;
-   # MP
-   #==============
-   1 )
-   printf "Copying MP-specific files .....\n"
-   cp ${PAPERSTARTER}/journal_files/MP/* .
-   cp ${PAPERSTARTER}/src/paper_mp.tex ./${papername}_paper.tex
-   ;;
-   # IMAJNA
-   #==============
-   2 )
-   printf "Copying IMAJNA-specific files .....\n"
-   cp ${PAPERSTARTER}/journal_files/IMAJNA/* .
-   cp ${PAPERSTARTER}/src/paper_imajna.tex ./${papername}_paper.tex
-   ;;
-   # OPTLETTERS
-   #==============
-   3 )
-   printf "Copying OPTLETTERS-specific files .....\n"
-   cp ${PAPERSTARTER}/journal_files/OPTLETTERS/* .
-   cp ${PAPERSTARTER}/src/paper_optletters.tex ./${papername}_paper.tex
-   ;;
    # COAP
    #==============
-   4 )
+   0 )
    printf "Copying COAP-specific files .....\n"
    cp ${PAPERSTARTER}/journal_files/COAP/* .
    cp ${PAPERSTARTER}/src/paper_coap.tex ./${papername}_paper.tex
    ;;
+   # IMAJNA
+   #==============
+   1 )
+   printf "Copying IMAJNA-specific files .....\n"
+   cp ${PAPERSTARTER}/journal_files/IMAJNA/* .
+   cp ${PAPERSTARTER}/src/paper_imajna.tex ./${papername}_paper.tex
+   ;;
+   # JOTA
+   #==============
+   2 )
+   printf "Copying JOTA-specific files .....\n"
+   cp ${PAPERSTARTER}/journal_files/JOTA/* .
+   cp ${PAPERSTARTER}/src/paper_jota.tex ./${papername}_paper.tex
+   ;;
+   # MP
+   #==============
+   3 )
+   printf "Copying MP-specific files .....\n"
+   cp ${PAPERSTARTER}/journal_files/MP/* .
+   cp ${PAPERSTARTER}/src/paper_mp.tex ./${papername}_paper.tex
+   ;;
+   # OMS
+   #==============
+   4 )
+   printf "Copying OMS-specific files .....\n"
+   cp ${PAPERSTARTER}/journal_files/OMS/* .
+   cp ${PAPERSTARTER}/src/paper_oms.tex ./${papername}_paper.tex
+   ;;
+   # OPTL
+   #==============
+   5 )
+   printf "Copying OPTL-specific files .....\n"
+   cp ${PAPERSTARTER}/journal_files/OPTL/* .
+   cp ${PAPERSTARTER}/src/paper_optl.tex ./${papername}_paper.tex
+   ;;
+   # SIOPT
+   #==============
+   6 )
+   printf "Copying SIOPT-specific files .....\n"
+   cp ${PAPERSTARTER}/journal_files/SIOPT/* .
+   cp ${PAPERSTARTER}/src/paper_siopt.tex ./${papername}_paper.tex
+   ;;
    # Unrecognized
    #==============
-   * ) Response not understood.  
+   * ) Response not understood.
    printf "\n**** Invalid response.  No journal-specific files copied over.\n\n"
    exit 1
    ;;
@@ -111,9 +127,9 @@ cp ${PAPERSTARTER}/src/techreport.tex ./${papername}_techreport.tex
 
 printf "Refreshing all non-journal and non-paper-specific files.\n"
 cp ${PAPERSTARTER}/src/coral.png .
-cp ${PAPERSTARTER}/src/ise.pdf .
+cp ${PAPERSTARTER}/src/header-ISE.jpg .
 cp ${PAPERSTARTER}/src/isetechreport.sty .
-cp ${PAPERSTARTER}/src/lehigh.png .
+cp ${PAPERSTARTER}/src/lehigh.pdf .
 cp ${PAPERSTARTER}/src/Makefile .
 
 printf "Updating Makefile with new name supplied above.\n"
@@ -126,7 +142,7 @@ sed "-i" "" "-e" "s/name/${papername}/g" Makefile
 case $response in
    # Start a new paper.
    # ==================
-   0 ) 
+   0 )
    printf "Starting a new paper.  Copying over initial files: abstract, body, title, style file, and references.\n\n"
    cp ${PAPERSTARTER}/src/abstract.tex .
    cp ${PAPERSTARTER}/src/body.tex .

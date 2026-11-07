@@ -1,16 +1,19 @@
+PaperStarter
+============
+
 Use the software in this directory to start a new paper.
 
 Required Directories
 --------------------
 
-The following directories should be downloaded onto your computer, either individually or as part of the entire "Utilities" repository:
+The following directories need to be available on your computer, either individually or as part of the entire "Utilities" repository:
 - PaperStarter
 - LaTeX
 
 Environment Variables
 ---------------------
 
-Environment variables for Linux/Unix based operating systems are typically set in a script in your home directory, such as a .bashrc file.  In order to use this software, you must have the following environment variables defined:
+Environment variables for Linux/Unix based operating systems are typically set in a script in your home directory, such as a .bashrc or .zshrc file.  In order to use this software, you must have the following environment variables defined:
 
 - PAPERSTARTER : should be set to the path of the PaperStarter directory mentioned above
 - DPRFECLATEX  : should be set to the path of the LaTeX directory mentioned above
